@@ -3,276 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mamadou Cissokho – Data Scientist, Santé • Agriculture • Climat</title>
+<title>Mamadou Cissokho, Data Scientist, Santé • Agriculture • Climat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-/* ── Langue switcher ── */
-.lang-switcher {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  margin-left: 1.5rem;
-}
-.lang-btn {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.25rem 0.55rem;
-  border-radius: 5px;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: transparent;
-  color: rgba(255,255,255,0.5);
-  cursor: pointer;
-  letter-spacing: 0.06em;
-  transition: all 0.2s;
-}
-.lang-btn.active, .lang-btn:hover {
-  background: var(--blue-l);
-  color: #fff;
-  border-color: var(--blue-l);
-}
-
-/* ── Bulletins section (light theme adapted from index0.html) ── */
-#bulletins {
-  background: var(--g50);
-  border-top: 1px solid var(--bd);
-  border-bottom: 1px solid var(--bd);
-}
-
-.bulletin-summary {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-.bsummary-card {
-  background: #fff;
-  border: 1px solid var(--bd);
-  border-radius: 12px;
-  padding: 1.25rem;
-  text-align: center;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-}
-
-.bsummary-val {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--blue);
-  letter-spacing: -0.03em;
-}
-.bsummary-val.amber { color: var(--amber); }
-.bsummary-val.green { color: var(--green); }
-.bsummary-label {
-  font-size: 0.78rem;
-  color: var(--g500);
-  margin-top: 0.25rem;
-}
-
-.bulletins-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.bulletin-card {
-  background: #fff;
-  border: 1px solid var(--bd);
-  border-radius: 14px;
-  overflow: hidden;
-  transition: all 0.25s;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
-}
-
-.bulletin-card:hover {
-  border-color: #b3d0ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(26,110,255,0.1);
-}
-
-.bulletin-card.featured {
-  border-color: #b3d0ff;
-}
-
-.bulletin-header {
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--bd);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.bulletin-school {
-  font-size: 0.7rem;
-  color: var(--g500);
-  font-family: var(--mono);
-  margin-bottom: 0.25rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.bulletin-degree {
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--g900);
-  margin-bottom: 0.1rem;
-}
-
-.bulletin-year {
-  font-size: 0.78rem;
-  color: var(--g500);
-}
-
-.bulletin-mention {
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.mention-badge {
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.mention-bien {
-  background: #e8f0ff;
-  color: var(--blue);
-  border: 1px solid #b3d0ff;
-}
-
-.mention-assez {
-  background: #e6fff8;
-  color: #00a87e;
-  border: 1px solid #9aecd8;
-}
-
-.mention-avg {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--g900);
-}
-
-.bulletin-body {
-  padding: 0.5rem 1.5rem 1rem;
-}
-
-.sem-label {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  color: var(--blue);
-  background: #e8f0ff;
-  border: 1px solid #b3d0ff;
-  border-radius: 4px;
-  padding: 0.1rem 0.4rem;
-  display: inline-block;
-  margin: 0.75rem 0 0.25rem;
-  font-weight: 600;
-}
-
-.bulletin-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.8rem;
-  margin-top: 0.4rem;
-}
-
-.bulletin-table thead th {
-  text-align: left;
-  color: var(--g400);
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.35rem 0.25rem;
-  border-bottom: 1px solid var(--bd);
-}
-
-.bulletin-table tbody tr {
-  border-bottom: 1px solid #f0f3f8;
-}
-
-.bulletin-table tbody tr:hover {
-  background: #f8f9ff;
-}
-
-.bulletin-table td {
-  padding: 0.38rem 0.25rem;
-  color: var(--g600);
-  vertical-align: middle;
-}
-
-.bulletin-table td:last-child {
-  text-align: right;
-  color: var(--g900);
-  font-weight: 700;
-  font-family: var(--mono);
-}
-
-.bulletin-table tr.top-note td:last-child {
-  color: var(--blue);
-}
-
-.bulletin-footer {
-  padding: 0.75rem 1.5rem;
-  border-top: 1px solid var(--bd);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--g50);
-}
-
-.bulletin-credits {
-  font-size: 0.78rem;
-  color: var(--g600);
-}
-
-.bulletin-credits strong {
-  color: var(--g900);
-}
-
-.btn-bulletin {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--blue);
-  text-decoration: none;
-  background: #e8f0ff;
-  border: 1px solid #b3d0ff;
-  padding: 0.3rem 0.75rem;
-  border-radius: 6px;
-  transition: all 0.2s;
-}
-
-.btn-bulletin:hover {
-  background: var(--blue);
-  color: #fff;
-  border-color: var(--blue);
-}
-
-.bulletin-pdf-cta {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-@media (max-width: 900px) {
-  .bulletin-summary { grid-template-columns: 1fr 1fr; }
-  .lang-switcher { margin-left: 0.75rem; }
-}
-@media (max-width: 580px) {
-  .bulletin-summary { grid-template-columns: 1fr 1fr; }
-  .bulletins-grid { grid-template-columns: 1fr; }
-}
-</style>
 </head>
 <body>
 
@@ -302,7 +36,7 @@
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge" data-fr="Ouvert à la colloboration | Tambacounda, Sénégal" data-en="Open to collaboration | Tambacounda, Senegal">Ouvert à la colloboration | Tambacounda, Sénégal</div>
+      <div class="hero-badge" data-fr="Ouvert à la collaboration | Tambacounda, Sénégal" data-en="Open to collaboration | Tambacounda, Senegal">Ouvert à la collaboration | Tambacounda, Sénégal</div>
       <h1 class="hero-name">Mamadou Cissokho</h1>
       <p class="hero-sub">
         <span class="hl">Data Scientist</span> <span data-fr="spécialisé en" data-en="specialized in">spécialisé en</span>
@@ -310,9 +44,8 @@
         <span class="hl" data-fr="Agriculture" data-en="Agriculture">Agriculture</span> <span data-fr="et" data-en="and">et</span>
         <span class="hl" data-fr="Climat" data-en="Climate">Climat</span>.
       </p>
-      <p class="hero-desc" data-fr="Je développe des solutions d'intelligence artificielle concrètes pour l'Afrique, en m'appuyant sur le deep learning, la vision par ordinateur et l'analyse de données terrain." data-en="I build concrete AI solutions for Africa, leveraging deep learning, computer vision, and field data analysis.">
-        Je développe des solutions d'intelligence artificielle concrètes pour l'Afrique,
-        en m'appuyant sur le deep learning, la vision par ordinateur et l'analyse de données terrain.
+      <p class="hero-desc" data-fr="Je construis des solutions d'IA robustes et explicables pour l'Afrique, en appliquant une méthodologie rigoureuse du problème métier à la mise en production." data-en="I build robust and explainable AI solutions for Africa, applying a rigorous methodology from business problem to production.">
+        Je construis des solutions d'IA robustes et explicables pour l'Afrique, en appliquant une méthodologie rigoureuse du problème métier à la mise en production.
       </p>
       <div class="hero-btns">
         <a href="#projects" class="btn btn-primary" data-fr="Voir mes projets →" data-en="See my projects →">Voir mes projets →</a>
@@ -326,10 +59,10 @@
     </div>
   </div>
   <div class="hstats">
-    <div class="hstat"><div class="hstat-ico">🏆</div><div><div class="hstat-val">93%</div><div class="hstat-lbl" data-fr="F1 Score – Détection Cancer Cutané" data-en="F1 Score – Skin Cancer Detection">F1 Score – Skin Cancer Detection</div></div></div>
-    <div class="hstat"><div class="hstat-ico">📁</div><div><div class="hstat-val">6+</div><div class="hstat-lbl" data-fr="Projets data & IA de bout en bout" data-en="End-to-end data & AI projects">Projets data &amp; IA de bout en bout</div></div></div>
-    <div class="hstat"><div class="hstat-ico">📄</div><div><div class="hstat-val">1</div><div class="hstat-lbl" data-fr="Article IEEE en évaluation" data-en="IEEE paper under review">Article IEEE en évaluation</div></div></div>
-    <div class="hstat"><div class="hstat-ico">🥇</div><div><div class="hstat-val">5+</div><div class="hstat-lbl" data-fr="Prix & compétitions nationales/internationales" data-en="National/international awards & competitions">Prix &amp; compétitions nationales/internationales</div></div></div>
+    <div class="hstat"><div class="hstat-ico">⌘</div><div><div class="hstat-val">93%</div><div class="hstat-lbl" data-fr="F1 Score, Détection Cancer Cutané" data-en="F1 Score, Skin Cancer Detection">F1 Score, Skin Cancer Detection</div></div></div>
+    <div class="hstat"><div class="hstat-ico">⌲</div><div><div class="hstat-val">6+</div><div class="hstat-lbl" data-fr="Projets data & IA de bout en bout" data-en="End-to-end data & AI projects">Projets data &amp; IA de bout en bout</div></div></div>
+    <div class="hstat"><div class="hstat-ico">◉</div><div><div class="hstat-val">1</div><div class="hstat-lbl" data-fr="Article IEEE en évaluation" data-en="IEEE paper under review">Article IEEE en évaluation</div></div></div>
+    <div class="hstat"><div class="hstat-ico">✦</div><div><div class="hstat-val">5+</div><div class="hstat-lbl" data-fr="Prix & compétitions nationales/internationales" data-en="National/international awards & competitions">Prix &amp; compétitions nationales/internationales</div></div></div>
   </div>
 </section>
 
@@ -337,18 +70,17 @@
 <section id="about">
   <div class="wrap">
     <div class="lbl" data-fr="Qui suis-je" data-en="About me">Qui suis-je</div>
-    <h2 class="ttl" data-fr="Un data scientist <em>ancré dans les réalités africaines</em>" data-en="A data scientist <em>rooted in African realities</em>">Un data scientist <em>ancré dans les réalités africaines</em></h2>
+    <h2 class="ttl" data-fr="Une approche data science méthodologique <em>et polyvalente</em>" data-en="A methodological and <em>versatile</em> data science approach">Une approche data science méthodologique <em>et polyvalente</em></h2>
     <div class="about-grid">
       <div class="atext">
-        <p data-fr="<strong>Data Scientist</strong> basé à Tambacounda (Sénégal), diplômé d'un Master IA &amp; Smart Tech en codiplomation entre l'<strong>Université de Technologie de Troyes</strong> (France) et l'<strong>Université Iba Der Thiam de Thiès</strong>." data-en="<strong>Data Scientist</strong> based in Tambacounda (Senegal), holding a Master's in AI &amp; Smart Tech through a joint program between <strong>Université de Technologie de Troyes</strong> (France) and <strong>Université Iba Der Thiam de Thiès</strong>."><strong>Data Scientist</strong> basé à Tambacounda (Sénégal), diplômé d'un Master IA &amp; Smart Tech en codiplomation entre l'<strong>Université de Technologie de Troyes</strong> (France) et l'<strong>Université Iba Der Thiam de Thiès</strong>.</p>
-        <p data-fr="Major de promotion en Licence Mathématiques-Physique-Informatique, j'ai développé une expertise pointue en <strong>deep learning, vision par ordinateur</strong> et <strong>analyse de données terrain africaines</strong>." data-en="Valedictorian in my Bachelor's in Mathematics-Physics-Computer Science, I developed expertise in <strong>deep learning, computer vision</strong> and <strong>African field data analysis</strong>.">Major de promotion en Licence Mathématiques-Physique-Informatique, j'ai développé une expertise pointue en <strong>deep learning, vision par ordinateur</strong> et <strong>analyse de données terrain africaines</strong>.</p>
-        <p data-fr="Mon ancrage local est une force : j'ai manipulé des données réelles issues du Ministère de la Santé sénégalais, de l'Agence Nationale de la Statistique et de projets agritech. Mon objectif : mettre l'IA au service du développement durable en Afrique." data-en="My local grounding is a strength: I've worked with real data from the Senegalese Ministry of Health, the National Statistics Agency, and agritech projects. My goal: put AI at the service of sustainable development in Africa.">Mon ancrage local est une force : j'ai manipulé des données réelles issues du Ministère de la Santé sénégalais, de l'Agence Nationale de la Statistique et de projets agritech. Mon objectif : mettre l'IA au service du développement durable en Afrique.</p>
+        <p data-fr="<strong>Data Scientist</strong> basé à Tambacounda (Sénégal). Je mobilise une approche rigoureuse, centrée sur la résolution de problèmes, pour transformer des données complexes en solutions fiables. Diplômé d'un Master IA &amp; Smart Tech en codiplomation entre l'<strong>Université de Technologie de Troyes</strong> (France) et l'<strong>Université Iba Der Thiam de Thiès</strong>." data-en="<strong>Data Scientist</strong> based in Tambacounda (Senegal). I use a rigorous, problem-solving approach to turn complex data into reliable solutions. Holding a Master's in AI &amp; Smart Tech jointly from <strong>Université de Technologie de Troyes</strong> (France) and <strong>Université Iba Der Thiam de Thiès</strong>."><strong>Data Scientist</strong> basé à Tambacounda (Sénégal). Je mobilise une approche rigoureuse, centrée sur la résolution de problèmes, pour transformer des données complexes en solutions fiables. Diplômé d'un Master IA &amp; Smart Tech en codiplomation entre l'<strong>Université de Technologie de Troyes</strong> (France) et l'<strong>Université Iba Der Thiam de Thiès</strong>.</p>
+        <p data-fr="<strong>Ma force :</strong> une méthodologie solide et une capacité d'adaptation rapide. Qu'il s'agisse de santé, d'agriculture ou de climat, ma démarche reste la même : comprendre le problème métier, explorer les données, construire des modèles robustes et expliquer leurs conclusions. Mon parcours m'a permis de manipuler des données réelles du Ministère de la Santé sénégalais, de l'Agence Nationale de la Statistique et de projets agritech, me donnant une expérience terrain précieuse." data-en="<strong>My strength:</strong> a solid methodology and ability to adapt quickly. Whether in healthcare, agriculture, or climate, my approach is consistent: understand the business problem, explore the data, build robust models, and explain their conclusions. My experience includes working with real-world data from Senegal's Ministry of Health, National Statistics Agency, and agritech projects."><strong>Ma force :</strong> une méthodologie solide et une capacité d'adaptation rapide. Qu'il s'agisse de santé, d'agriculture ou de climat, ma démarche reste la même : comprendre le problème métier, explorer les données, construire des modèles robustes et expliquer leurs conclusions. Mon parcours m'a permis de manipuler des données réelles du Ministère de la Santé sénégalais, de l'Agence Nationale de la Statistique et de projets agritech, me donnant une expérience terrain précieuse.</p>
       </div>
       <div class="acards">
-        <div class="acard"><div class="acard-ico">🎓</div><div><div class="acard-t" data-fr="Codiplomation France – Sénégal" data-en="France–Senegal Joint Degree">Codiplomation France – Sénégal</div><div class="acard-s">UTT Troyes × UIDT Thiès, 2023–2026</div></div></div>
-        <div class="acard"><div class="acard-ico">🌍</div><div><div class="acard-t" data-fr="Données terrain africaines" data-en="African Field Data">Données terrain africaines</div><div class="acard-s" data-fr="Santé publique, agriculture, climat – données réelles" data-en="Public health, agriculture, climate – real data">Santé publique, agriculture, climat – données réelles</div></div></div>
+        <div class="acard"><div class="acard-ico">⌛</div><div><div class="acard-t" data-fr="Codiplomation France, Sénégal" data-en="France–Senegal Joint Degree">Codiplomation France, Sénégal</div><div class="acard-s">UTT Troyes × UIDT Thiès, 2023–2026</div></div></div>
+        <div class="acard"><div class="acard-ico">⚙</div><div><div class="acard-t" data-fr="Candidat doctorat, IA appliquée" data-en="PhD Candidate, Applied AI">Candidat doctorat, IA appliquée</div><div class="acard-s" data-fr="Agriculture intelligente · Santé · Environnement" data-en="Smart Agriculture · Health · Environment">Agriculture intelligente · Santé · Environnement</div></div></div>
         <div class="acard"><div class="acard-ico">📄</div><div><div class="acard-t" data-fr="Publication IEEE en cours" data-en="IEEE Publication in progress">Publication IEEE en cours</div><div class="acard-s" data-fr="Détection cancer peau noire, 93% F1-score" data-en="Dark skin cancer detection, 93% F1-score">Détection cancer peau noire, 93% F1-score</div></div></div>
-        <div class="acard"><div class="acard-ico">🔬</div><div><div class="acard-t" data-fr="Candidat doctorat, IA appliquée" data-en="PhD Candidate, Applied AI">Candidat doctorat, IA appliquée</div><div class="acard-s" data-fr="Agriculture intelligente · Santé · Environnement" data-en="Smart Agriculture · Health · Environment">Agriculture intelligente · Santé · Environnement</div></div></div>
+        <div class="acard"><div class="acard-ico">⊛</div><div><div class="acard-t" data-fr="Données terrain africaines" data-en="African Field Data">Données terrain africaines</div><div class="acard-s" data-fr="Santé publique, agriculture, climat, données réelles" data-en="Public health, agriculture, climate, real data">Santé publique, agriculture, climat, données réelles</div></div></div>
       </div>
     </div>
   </div>
@@ -364,9 +96,9 @@
       <div class="expc">
         <div class="expc-head"><div class="expc-ico eco-h">❤️</div><div class="expc-title" data-fr="IA pour la Santé" data-en="AI for Health">IA pour la Santé</div></div>
         <ul class="expc-list">
-          <li data-fr="Détection Cancer Cutané" data-en="Skin Cancer Detection">Détection Cancer Cutané</li>
-          <li data-fr="Imagerie médicale" data-en="Medical Imaging">Imagerie médicale</li>
+          <li data-fr="Classification et robustesse" data-en="Classification & robustness">Classification et robustesse</li>
           <li data-fr="IA explicable (Grad-CAM)" data-en="Explainable AI (Grad-CAM)">IA explicable (Grad-CAM)</li>
+          <li data-fr="Gestion des données déséquilibrées" data-en="Handling imbalanced data">Gestion des données déséquilibrées</li>
         </ul>
         <div class="expc-img"><img src="skin_cancer/aperçu.png" alt="Santé"></div>
         <a href="#projects" class="expc-lnk" data-fr="Voir les projets →" data-en="See projects →">Voir les projets →</a>
@@ -374,9 +106,9 @@
       <div class="expc">
         <div class="expc-head"><div class="expc-ico eco-a">🌱</div><div class="expc-title" data-fr="IA pour l'Agriculture" data-en="AI for Agriculture">IA pour l'Agriculture</div></div>
         <ul class="expc-list">
-          <li>Smart Farming &amp; IoT</li>
-          <li data-fr="Détection de maladies" data-en="Disease Detection">Détection de maladies</li>
-          <li data-fr="Prédiction de rendement" data-en="Yield Prediction">Prédiction de rendement</li>
+          <li data-fr="Modélisation prédictive et IoT" data-en="Predictive modeling & IoT">Modélisation prédictive et IoT</li>
+          <li data-fr="Analyse de séries temporelles" data-en="Time series analysis">Analyse de séries temporelles</li>
+          <li data-fr="Systèmes de monitoring temps réel" data-en="Real-time monitoring systems">Systèmes de monitoring temps réel</li>
         </ul>
         <div class="expc-img"><img src="3d/aperçu.png" alt="Agriculture"></div>
         <a href="#projects" class="expc-lnk" data-fr="Voir les projets →" data-en="See projects →">Voir les projets →</a>
@@ -384,9 +116,9 @@
       <div class="expc">
         <div class="expc-head"><div class="expc-ico eco-c">🌡️</div><div class="expc-title" data-fr="IA pour le Climat" data-en="AI for Climate">IA pour le Climat</div></div>
         <ul class="expc-list">
-          <li data-fr="Prévision météorologique" data-en="Weather Forecasting">Prévision météorologique</li>
-          <li data-fr="Énergie renouvelable" data-en="Renewable Energy">Énergie renouvelable</li>
-          <li data-fr="Surveillance environnementale" data-en="Environmental Monitoring">Surveillance environnementale</li>
+          <li data-fr="Fiabilité pour la prise de décision" data-en="Reliability for decision-making">Fiabilité pour la prise de décision</li>
+          <li data-fr="Prévision et analyse de séries temporelles" data-en="Forecasting & time series">Prévision et analyse de séries temporelles</li>
+          <li data-fr="Intégration de données hétérogènes" data-en="Heterogeneous data integration">Intégration de données hétérogènes</li>
         </ul>
         <div class="expc-img"><img src="climathon/aperçu.jpeg" alt="Climat"></div>
         <a href="#projects" class="expc-lnk" data-fr="Voir les projets →" data-en="See projects →">Voir les projets →</a>
@@ -401,15 +133,15 @@
   <div class="wrap">
     <div class="lbl">Featured Projects</div>
     <h2 class="ttl" data-fr="Projets <em>sélectionnés</em>" data-en="<em>Selected</em> Projects">Projets <em>sélectionnés</em></h2>
-    <p class="desc" data-fr="Des solutions IA déployées sur le terrain africain, alliant recherche de pointe et impact local mesurable." data-en="AI solutions deployed in the African field, combining cutting-edge research with measurable local impact.">Des solutions IA déployées sur le terrain africain, alliant recherche de pointe et impact local mesurable.</p>
+    <p class="desc" data-fr="Des projets de bout en bout où la méthodologie prime : fiabilité des données, robustesse des modèles, interprétabilité." data-en="End-to-end projects where methodology comes first: data reliability, model robustness, interpretability.">Des projets de bout en bout où la méthodologie prime : fiabilité des données, robustesse des modèles, interprétabilité.</p>
     <div class="projg">
 
       <div class="projc">
         <div class="pthumb"><img src="skin_cancer/aperçu.png" alt="Skin Cancer"><span class="ptag pt-h">Healthcare</span></div>
         <div class="pbody">
           <div class="ptitle" data-fr="Détection du cancer de la peau sur peau noire" data-en="Skin Cancer Detection on Dark Skin">Détection du cancer de la peau sur peau noire</div>
-          <div class="pdesc" data-fr="Pipeline complet sur Fitzpatrick17k : extraction des phototypes sombres, classification 6 classes, contrôle négatif et explainabilité Grad-CAM." data-en="Full pipeline on Fitzpatrick17k: dark skin tone extraction, 6-class classification, negative control and Grad-CAM explainability.">Pipeline complet sur Fitzpatrick17k : extraction des phototypes sombres, classification 6 classes, contrôle négatif et explainabilité Grad-CAM.</div>
-          <div class="pmetrics"><div class="metric"><div class="mv">93%</div><div class="mk">F1 Score</div></div><div class="metric"><div class="mv">ViT</div><div class="mk">Model</div></div><div class="metric"><div class="mv">GC</div><div class="mk">GradCAM</div></div></div>
+          <div class="pdesc" data-fr="Développement d'un pipeline de classification robuste sur un dataset déséquilibré. Accent sur la gestion des phototypes sombres (sous-représentés) et l'interprétabilité des résultats avec Grad-CAM, pour une solution plus fiable et transparente." data-en="Development of a robust classification pipeline on an imbalanced dataset. Focus on managing under‑represented dark skin phototypes and interpretability with Grad-CAM, for a more reliable and transparent solution.">Développement d'un pipeline de classification robuste sur un dataset déséquilibré. Accent sur la gestion des phototypes sombres (sous-représentés) et l'interprétabilité des résultats avec Grad-CAM, pour une solution plus fiable et transparente.</div>
+          <div class="pmetrics"><div class="metric"><div class="mv">93%</div><div class="mk">F1 Score</div></div><div class="metric"><div class="mv">ViT</div><div class="mk">Model</div></div><div class="metric"><div class="mv">Grad-CAM</div><div class="mk">Explainability</div></div></div>
           <div class="tagrow"><span class="chip">TensorFlow</span><span class="chip">Python</span><span class="chip">ViT</span><span class="chip">GradCAM</span></div>
           <div class="plinks">
             <a href="skin_cancer/Presentation_Cissokho.pptx" class="plnk" data-fr="Présentation →" data-en="Presentation →">Présentation →</a>
@@ -421,9 +153,9 @@
       <div class="projc">
         <div class="pthumb"><img src="3d/aperçu.png" alt="Serre IoT"><span class="ptag pt-a">Agriculture</span></div>
         <div class="pbody">
-          <div class="ptitle" data-fr="Serres connectées – IoT &amp; Modélisation 3D" data-en="Connected Greenhouses – IoT &amp; 3D Modeling">Serres connectées – IoT &amp; Modélisation 3D</div>
-          <div class="pdesc" data-fr="Conception et déploiement de serres agricoles connectées avec capteurs IoT, modélisation 3D Blender et pipelines de collecte en temps réel." data-en="Design and deployment of connected agricultural greenhouses with IoT sensors, Blender 3D modeling and real-time data pipelines.">Conception et déploiement de serres agricoles connectées avec capteurs IoT, modélisation 3D Blender et pipelines de collecte en temps réel.</div>
-          <div class="pmetrics"><div class="metric"><div class="mv">3D</div><div class="mk">Blender</div></div><div class="metric"><div class="mv">IoT</div><div class="mk">Sensors</div></div><div class="metric"><div class="mv">Live</div><div class="mk">Monitoring</div></div></div>
+          <div class="ptitle" data-fr="Serres connectées, IoT &amp; Modélisation 3D" data-en="Connected Greenhouses, IoT &amp; 3D Modeling">Serres connectées, IoT &amp; Modélisation 3D</div>
+          <div class="pdesc" data-fr="Définition d'une architecture de A à Z : collecte de données terrain via capteurs, stockage, et développement de modèles prédictifs (température, humidité). Objectif : fournir des alertes précoces pour optimiser les rendements." data-en="End‑to‑end architecture design: field data collection via sensors, storage, and predictive models (temperature, humidity). Goal: provide early warnings to optimize yields.">Définition d'une architecture de A à Z : collecte de données terrain via capteurs, stockage, et développement de modèles prédictifs (température, humidité). Objectif : fournir des alertes précoces pour optimiser les rendements.</div>
+          <div class="pmetrics"><div class="metric"><div class="mv">Pipeline</div><div class="mk">ETL complet</div></div><div class="metric"><div class="mv">IoT</div><div class="mk">Sensors</div></div><div class="metric"><div class="mv">Streamlit</div><div class="mk">Dashboard</div></div></div>
           <div class="tagrow"><span class="chip">Python</span><span class="chip">IoT</span><span class="chip">Blender</span><span class="chip">Streamlit</span></div>
           <div class="plinks">
             <a href="3d/Pm1.mp4" class="plnk" data-fr="Voir le prototype →" data-en="See prototype →">Voir le prototype →</a>
@@ -435,9 +167,9 @@
       <div class="projc">
         <div class="pthumb"><img src="climathon/aperçu.jpeg" alt="Climathon"><span class="ptag pt-c">Climate</span></div>
         <div class="pbody">
-          <div class="ptitle" data-fr="Solution IA – Énergies renouvelables, Sénégal" data-en="AI Solution – Renewable Energy, Senegal">Solution IA – Énergies renouvelables, Sénégal</div>
-          <div class="pdesc" data-fr="Système de suivi et prévision de production énergétique renouvelable avec dashboard interactif présenté devant un jury international AUF Climathon." data-en="Tracking and forecasting system for renewable energy production with interactive dashboard presented before an international AUF Climathon jury.">Système de suivi et prévision de production énergétique renouvelable avec dashboard interactif présenté devant un jury international AUF Climathon.</div>
-          <div class="pmetrics"><div class="metric"><div class="mv">2ème</div><div class="mk">Prix AUF</div></div><div class="metric"><div class="mv">BI</div><div class="mk">Power BI</div></div></div>
+          <div class="ptitle" data-fr="Solution IA, Énergies renouvelables, Sénégal" data-en="AI Solution, Renewable Energy, Senegal">Solution IA, Énergies renouvelables, Sénégal</div>
+          <div class="pdesc" data-fr="Création d'un outil d'aide à la décision pour le pilotage d'infrastructures énergétiques. Basé sur des modèles de prévision (séries temporelles) et intégré dans un dashboard Power BI, la solution a été présentée devant un jury international." data-en="Creation of a decision‑support tool for energy infrastructure management. Based on forecasting models (time series) and integrated into a Power BI dashboard, the solution was presented to an international jury.">Création d'un outil d'aide à la décision pour le pilotage d'infrastructures énergétiques. Basé sur des modèles de prévision (séries temporelles) et intégré dans un dashboard Power BI, la solution a été présentée devant un jury international.</div>
+          <div class="pmetrics"><div class="metric"><div class="mv">2ème</div><div class="mk">Prix AUF</div></div><div class="metric"><div class="mv">Time Series</div><div class="mk">Forecasting</div></div><div class="metric"><div class="mv">Power BI</div><div class="mk">Dashboard</div></div></div>
           <div class="tagrow"><span class="chip">Power BI</span><span class="chip">Python</span><span class="chip">Prévision</span></div>
           <div class="plinks">
             <a href="climathon/presentation.mp4" class="plnk" data-fr="Voir le projet →" data-en="See project →">Voir le projet →</a>
@@ -449,9 +181,9 @@
       <div class="projc">
         <div class="pthumb"><img src="dhis2/aperçu.JPG" alt="DHIS2"><span class="ptag pt-h">Healthcare</span></div>
         <div class="pbody">
-          <div class="ptitle" data-fr="DHIS2Harvest – Maladies non transmissibles" data-en="DHIS2Harvest – Non-communicable Diseases">DHIS2Harvest – Maladies non transmissibles</div>
-          <div class="pdesc" data-fr="Nettoyage rigoureux d'un dataset DHIS2 sur 4 ans avec dashboard Streamlit et carte du Sénégal par région. Top 6 finaliste sur 70+ candidatures." data-en="Rigorous cleaning of a 4-year DHIS2 dataset with a Streamlit dashboard and regional Senegal map. Top 6 finalist out of 70+ applications.">Nettoyage rigoureux d'un dataset DHIS2 sur 4 ans avec dashboard Streamlit et carte du Sénégal par région. Top 6 finaliste sur 70+ candidatures.</div>
-          <div class="pmetrics"><div class="metric"><div class="mv">Top 6</div><div class="mk">/ 70+</div></div><div class="metric"><div class="mv">4 ans</div><div class="mk">Data</div></div></div>
+          <div class="ptitle" data-fr="DHIS2Harvest, Maladies non transmissibles" data-en="DHIS2Harvest, Non-communicable Diseases">DHIS2Harvest, Maladies non transmissibles</div>
+          <div class="pdesc" data-fr="Analyse approfondie de 4 ans de données du système national d'information sanitaire (DHIS2). Projet axé sur la fiabilité du pipeline de données (nettoyage rigoureux) et la création de visualisations pertinentes pour les équipes terrain. Top 6 finaliste sur 70+ candidatures." data-en="In‑depth analysis of 4 years of data from the national health information system (DHIS2). Project focused on data pipeline reliability (rigorous cleaning) and creation of relevant visualizations for field teams. Top 6 finalist out of 70+ applications.">Analyse approfondie de 4 ans de données du système national d'information sanitaire (DHIS2). Projet axé sur la fiabilité du pipeline de données (nettoyage rigoureux) et la création de visualisations pertinentes pour les équipes terrain. Top 6 finaliste sur 70+ candidatures.</div>
+          <div class="pmetrics"><div class="metric"><div class="mv">Top 6</div><div class="mk">/ 70+</div></div><div class="metric"><div class="mv">4 ans</div><div class="mk">Data</div></div><div class="metric"><div class="mv">Streamlit</div><div class="mk">Dashboard</div></div></div>
           <div class="tagrow"><span class="chip">DHIS2</span><span class="chip">Streamlit</span><span class="chip">Geopandas</span></div>
           <div class="plinks">
             <a href="dhis2/MEDICONNECT-AI-PROJECT.pptx" class="plnk" data-fr="Présentation →" data-en="Presentation →">Présentation →</a>
@@ -463,9 +195,9 @@
       <div class="projc">
         <div class="pthumb"><img src="drdr/aperçu.png" alt="DRDR"><span class="ptag pt-a">Agriculture</span></div>
         <div class="pbody">
-          <div class="ptitle" data-fr="Surveillance météo &amp; prédiction agricole – DRDR" data-en="Weather Monitoring &amp; Agricultural Prediction – DRDR">Surveillance météo &amp; prédiction agricole – DRDR</div>
-          <div class="pdesc" data-fr="Collecte de données météorologiques terrain et sources ouvertes. Modèles prédictifs intégrés dans un dashboard Power BI déployé pour la DRDR." data-en="Field and open-source meteorological data collection. Predictive models integrated into a Power BI dashboard deployed for DRDR.">Collecte de données météorologiques terrain et sources ouvertes. Modèles prédictifs intégrés dans un dashboard Power BI déployé pour la DRDR.</div>
-          <div class="pmetrics"><div class="metric"><div class="mv">Live</div><div class="mk">Dashboard</div></div><div class="metric"><div class="mv">DRDR</div><div class="mk">Deployed</div></div></div>
+          <div class="ptitle" data-fr="Surveillance météo &amp; prédiction agricole, DRDR" data-en="Weather Monitoring &amp; Agricultural Prediction, DRDR">Surveillance météo &amp; prédiction agricole, DRDR</div>
+          <div class="pdesc" data-fr="Conception d'un système de monitoring pour des données météorologiques terrain. Approche combinant fiabilisation de sources hétérogènes (capteurs, API ouvertes) et développement de modèles prédictifs, intégrés dans un dashboard Power BI déployé." data-en="Design of a monitoring system for field weather data. Approach combining reliability of heterogeneous sources (sensors, open APIs) and predictive models, integrated into a deployed Power BI dashboard.">Conception d'un système de monitoring pour des données météorologiques terrain. Approche combinant fiabilisation de sources hétérogènes (capteurs, API ouvertes) et développement de modèles prédictifs, intégrés dans un dashboard Power BI déployé.</div>
+          <div class="pmetrics"><div class="metric"><div class="mv">Live</div><div class="mk">Dashboard</div></div><div class="metric"><div class="mv">DRDR</div><div class="mk">Deployed</div></div><div class="metric"><div class="mv">Heterogeneous</div><div class="mk">Data</div></div></div>
           <div class="tagrow"><span class="chip">Power BI</span><span class="chip">Python</span><span class="chip">Pandas</span></div>
           <div class="plinks">
             <a href="drdr/demoBig.mp4" class="plnk" data-fr="Voir le dashboard →" data-en="See dashboard →">Voir le dashboard →</a>
@@ -477,9 +209,9 @@
       <div class="projc">
         <div class="pthumb"><img src="ansd/aperçu.png" alt="ANSD"><span class="ptag pt-d">Data</span></div>
         <div class="pbody">
-          <div class="ptitle" data-fr="Open Data – Agence Nationale de la Statistique" data-en="Open Data – National Statistics Agency">Open Data – Agence Nationale de la Statistique</div>
-          <div class="pdesc" data-fr="Analyse de données publiques nationales sénégalaises avec coordination technique d'équipe. Sélection parmi les meilleures équipes au Hackathon ANSD 2024." data-en="Analysis of Senegalese national public data with technical team coordination. Selected among the best teams at the ANSD Hackathon 2024.">Analyse de données publiques nationales sénégalaises avec coordination technique d'équipe. Sélection parmi les meilleures équipes au Hackathon ANSD 2024.</div>
-          <div class="pmetrics"><div class="metric"><div class="mv">Top</div><div class="mk">Teams</div></div><div class="metric"><div class="mv">2024</div><div class="mk">ANSD</div></div></div>
+          <div class="ptitle" data-fr="Open Data, Agence Nationale de la Statistique" data-en="Open Data, National Statistics Agency">Open Data, Agence Nationale de la Statistique</div>
+          <div class="pdesc" data-fr="Valorisation de données publiques pour en extraire des indicateurs clés. Coordination technique d'équipe pour assurer la qualité et la reproductibilité de l'analyse. Sélection parmi les meilleures équipes au Hackathon ANSD 2024." data-en="Leveraging public data to extract key indicators. Technical team coordination to ensure analysis quality and reproducibility. Selected among the best teams at the ANSD Hackathon 2024.">Valorisation de données publiques pour en extraire des indicateurs clés. Coordination technique d'équipe pour assurer la qualité et la reproductibilité de l'analyse. Sélection parmi les meilleures équipes au Hackathon ANSD 2024.</div>
+          <div class="pmetrics"><div class="metric"><div class="mv">Top</div><div class="mk">Teams</div></div><div class="metric"><div class="mv">2024</div><div class="mk">ANSD</div></div><div class="metric"><div class="mv">Reproducible</div><div class="mk">Analysis</div></div></div>
           <div class="tagrow"><span class="chip">Open Data</span><span class="chip">Python</span><span class="chip">Visualisation</span></div>
           <div class="plinks">
             <a href="ansd/Présentation_GokhConnect[2].pptx" class="plnk" data-fr="Présentation →" data-en="Presentation →">Présentation →</a>
@@ -502,23 +234,23 @@
 
     <div class="timeline">
       <div class="tl-item">
-        <div class="tl-year">2019 – 2022</div>
+        <div class="tl-year">2019-2022</div>
         <div class="tl-content">
           <div class="tl-title" data-fr="Licence Mathématiques-Physique-Informatique" data-en="Bachelor's in Mathematics-Physics-Computer Science">Licence Mathématiques-Physique-Informatique</div>
-          <div class="tl-sub" data-fr="Université du Sine Saloum (USSEIN) – <strong>Major de promotion, mention Bien (15,12)</strong>" data-en="University of Sine Saloum (USSEIN) – <strong>Valedictorian, Honours (15.12)</strong>">Université du Sine Saloum (USSEIN) – <strong>Major de promotion, mention Bien (15,12)</strong></div>
+          <div class="tl-sub" data-fr="Université du Sine Saloum (USSEIN), <strong>Major de promotion, mention Bien (15,12)</strong>" data-en="University of Sine Saloum (USSEIN), <strong>Valedictorian, Honours (15.12)</strong>">Université du Sine Saloum (USSEIN), <strong>Major de promotion, mention Bien (15,12)</strong></div>
           <div class="tl-desc" data-fr="Parcours d'excellence avec une spécialisation progressive en mathématiques appliquées et informatique. 180 crédits ECTS validés." data-en="Excellence track with progressive specialisation in applied mathematics and computer science. 180 ECTS credits validated.">Parcours d'excellence avec une spécialisation progressive en mathématiques appliquées et informatique. 180 crédits ECTS validés.</div>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-year">2022 – 2024</div>
+        <div class="tl-year">2022-2024</div>
         <div class="tl-content">
           <div class="tl-title" data-fr="Master IA &amp; Smart Tech (codiplomation)" data-en="Master's AI &amp; Smart Tech (joint degree)">Master IA &amp; Smart Tech (codiplomation)</div>
-          <div class="tl-sub" data-fr="UIDT Thiès (Sénégal) × UTT Troyes (France) – <strong>Mention Bien (M2 : 14,86)</strong>" data-en="UIDT Thiès (Senegal) × UTT Troyes (France) – <strong>Honours (M2: 14.86)</strong>">UIDT Thiès (Sénégal) × UTT Troyes (France) – <strong>Mention Bien (M2 : 14,86)</strong></div>
+          <div class="tl-sub" data-fr="UIDT Thiès (Sénégal) × UTT Troyes (France), <strong>Mention Bien (M2 : 14,86)</strong>" data-en="UIDT Thiès (Senegal) × UTT Troyes (France), <strong>Honours (M2: 14.86)</strong>">UIDT Thiès (Sénégal) × UTT Troyes (France), <strong>Mention Bien (M2 : 14,86)</strong></div>
           <div class="tl-desc" data-fr="Formation d'excellence en IA, IoT, deep learning et vision par ordinateur. 135 crédits ECTS. Projets en partenariat avec des institutions publiques." data-en="Excellence training in AI, IoT, deep learning and computer vision. 135 ECTS credits. Projects in partnership with public institutions.">Formation d'excellence en IA, IoT, deep learning et vision par ordinateur. 135 crédits ECTS. Projets en partenariat avec des institutions publiques.</div>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-year">2023 –</div>
+        <div class="tl-year">2023–Aujourd'hui</div>
         <div class="tl-content">
           <div class="tl-title" data-fr="Consultant Agritech &amp; Projet Serre IoT" data-en="Agritech Consultant &amp; IoT Greenhouse Project">Consultant Agritech &amp; Projet Serre IoT</div>
           <div class="tl-sub" data-fr="Solutions IA pour l'agriculture intelligente" data-en="AI solutions for smart farming">Solutions IA pour l'agriculture intelligente</div>
@@ -528,7 +260,7 @@
       <div class="tl-item">
         <div class="tl-year">2024</div>
         <div class="tl-content">
-          <div class="tl-title">🏆 <span data-fr="2ème Prix – Climathon AUF 2024" data-en="2nd Prize – AUF Climathon 2024">2ème Prix – Climathon AUF 2024</span></div>
+          <div class="tl-title"> <span data-fr="2ème Prix, Climathon AUF 2024" data-en="2nd Prize, AUF Climathon 2024">2ème Prix, Climathon AUF 2024</span></div>
           <div class="tl-sub" data-fr="IA pour l'énergie renouvelable au Sénégal" data-en="AI for renewable energy in Senegal">IA pour l'énergie renouvelable au Sénégal</div>
           <div class="tl-desc" data-fr="Solution de suivi et prévision de production énergétique. Jury international." data-en="Energy production tracking and forecasting solution. International jury.">Solution de suivi et prévision de production énergétique. Jury international.</div>
         </div>
@@ -536,7 +268,7 @@
       <div class="tl-item">
         <div class="tl-year">2024</div>
         <div class="tl-content">
-          <div class="tl-title">📊 <span data-fr="Hackathon ANSD – Sélectionné" data-en="ANSD Hackathon – Selected">Hackathon ANSD – Sélectionné</span></div>
+          <div class="tl-title"> <span data-fr="Hackathon ANSD, Sélectionné" data-en="ANSD Hackathon, Selected">Hackathon ANSD, Sélectionné</span></div>
           <div class="tl-sub" data-fr="Parmi les meilleures équipes nationales" data-en="Among the best national teams">Parmi les meilleures équipes nationales</div>
           <div class="tl-desc" data-fr="Analyse de données ouvertes de l'Agence Nationale de la Statistique du Sénégal." data-en="Analysis of open data from Senegal's National Statistics Agency.">Analyse de données ouvertes de l'Agence Nationale de la Statistique du Sénégal.</div>
         </div>
@@ -544,13 +276,13 @@
       <div class="tl-item">
         <div class="tl-year">2025</div>
         <div class="tl-content">
-          <div class="tl-title">🏅 <span data-fr="Top 6 Finaliste – DHIS2Harvest" data-en="Top 6 Finalist – DHIS2Harvest">Top 6 Finaliste – DHIS2Harvest</span></div>
+          <div class="tl-title"> <span data-fr="Top 6 Finaliste, DHIS2Harvest" data-en="Top 6 Finalist, DHIS2Harvest">Top 6 Finaliste, DHIS2Harvest</span></div>
           <div class="tl-sub" data-fr="Data Science Without Borders (70+ candidatures)" data-en="Data Science Without Borders (70+ applications)">Data Science Without Borders (70+ candidatures)</div>
           <div class="tl-desc" data-fr="Analyse des maladies non transmissibles sur 4 ans de données du Ministère de la Santé." data-en="Analysis of non-communicable diseases across 4 years of Ministry of Health data.">Analyse des maladies non transmissibles sur 4 ans de données du Ministère de la Santé.</div>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-year">2025 – 2026</div>
+        <div class="tl-year">2025-2026</div>
         <div class="tl-content">
           <div class="tl-title">📄 <span data-fr="Publication IEEE (en évaluation)" data-en="IEEE Publication (under review)">Publication IEEE (en évaluation)</span></div>
           <div class="tl-sub" data-fr="Skin Cancer Detection on Dark Skin" data-en="Skin Cancer Detection on Dark Skin">Skin Cancer Detection on Dark Skin</div>
@@ -570,227 +302,72 @@
     <h2 class="ttl" data-fr="Bulletins de <em>Notes</em>" data-en="Grade <em>Transcripts</em>">Bulletins de <em>Notes</em></h2>
     <p class="desc" data-fr="Relevés officiels depuis la Licence jusqu'au Master. Top 3 des meilleures UE par semestre, attestant d'un parcours d'excellence en Mathématiques, Informatique et Intelligence Artificielle." data-en="Official transcripts from Bachelor's to Master's. Top 3 best course units per semester, attesting to an excellence track in Mathematics, Computer Science and Artificial Intelligence.">Relevés officiels depuis la Licence jusqu'au Master. Top 3 des meilleures UE par semestre, attestant d'un parcours d'excellence en Mathématiques, Informatique et Intelligence Artificielle.</p>
 
-    <!-- Résumé -->
     <div class="bulletin-summary">
-      <div class="bsummary-card">
-        <div class="bsummary-val">14,86</div>
-        <div class="bsummary-label" data-fr="Moyenne Master 2 (annuelle)" data-en="Master 2 GPA (annual)">Moyenne Master 2 (annuelle)</div>
-      </div>
-      <div class="bsummary-card">
-        <div class="bsummary-val">12,53</div>
-        <div class="bsummary-label" data-fr="Moyenne Master 1 (annuelle)" data-en="Master 1 GPA (annual)">Moyenne Master 1 (annuelle)</div>
-      </div>
-      <div class="bsummary-card">
-        <div class="bsummary-val green">295</div>
-        <div class="bsummary-label" data-fr="Crédits ECTS validés" data-en="ECTS credits validated">Crédits ECTS validés</div>
-      </div>
-      <div class="bsummary-card">
-        <div class="bsummary-val amber">Major</div>
-        <div class="bsummary-label" data-fr="de promotion – Licence MPI" data-en="of cohort – BSc MPI">de promotion – Licence MPI</div>
-      </div>
+      <div class="bsummary-card"><div class="bsummary-val">14,86</div><div class="bsummary-label" data-fr="Moyenne Master 2 (annuelle)" data-en="Master 2 GPA (annual)">Moyenne Master 2 (annuelle)</div></div>
+      <div class="bsummary-card"><div class="bsummary-val">12,53</div><div class="bsummary-label" data-fr="Moyenne Master 1 (annuelle)" data-en="Master 1 GPA (annual)">Moyenne Master 1 (annuelle)</div></div>
+      <div class="bsummary-card"><div class="bsummary-val green">295</div><div class="bsummary-label" data-fr="Crédits ECTS validés" data-en="ECTS credits validated">Crédits ECTS validés</div></div>
+      <div class="bsummary-card"><div class="bsummary-val amber">Major</div><div class="bsummary-label" data-fr="de promotion, Licence MPI" data-en="of cohort, BSc MPI">de promotion, Licence MPI</div></div>
     </div>
 
     <div class="bulletins-grid">
-
       <!-- LICENCE 1 -->
       <div class="bulletin-card">
-        <div class="bulletin-header">
-          <div>
-            <div class="bulletin-school">USSEIN – UFR Sciences Fondamentales</div>
-            <div class="bulletin-degree" data-fr="Licence 1 – Maths, Physique, Informatique" data-en="Bachelor 1 – Maths, Physics, CS">Licence 1 – Maths, Physique, Informatique</div>
-            <div class="bulletin-year">2019–2020</div>
-          </div>
-          <div class="bulletin-mention">
-            <span class="mention-badge mention-bien" data-fr="Bien" data-en="Honours">Bien</span>
-            <div class="mention-avg">14,70</div>
-          </div>
-        </div>
+        <div class="bulletin-header"><div><div class="bulletin-school">USSEIN, UFR Sciences Fondamentales</div><div class="bulletin-degree">Licence 1, Maths, Physique, Informatique</div><div class="bulletin-year">2019–2020</div></div><div class="bulletin-mention"><span class="mention-badge mention-bien">Bien</span><div class="mention-avg">14,70</div></div></div>
         <div class="bulletin-body">
-          <span class="sem-label" data-fr="Semestre 1 · 15,01" data-en="Semester 1 · 15.01">Semestre 1 · 15,01</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>INF1122</td><td data-fr="Algorithme 1" data-en="Algorithm 1">Algorithme 1</td><td>17,50</td></tr>
-              <tr class="top-note"><td>PRO1123</td><td data-fr="Analyse combinatoire" data-en="Combinatorics">Analyse combinatoire</td><td>16,60</td></tr>
-              <tr><td>PHY1124</td><td data-fr="Électricité &amp; Mécanique" data-en="Electricity &amp; Mechanics">Électricité &amp; Mécanique</td><td>14,50</td></tr>
-            </tbody>
-          </table>
-          <span class="sem-label" data-fr="Semestre 2 · 14,40" data-en="Semester 2 · 14.40">Semestre 2 · 14,40</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>STA1223</td><td data-fr="Statistique Univariée" data-en="Univariate Statistics">Statistique Univariée</td><td>16,30</td></tr>
-              <tr class="top-note"><td>ALG1220</td><td data-fr="Algèbre Linéaire 2" data-en="Linear Algebra 2">Algèbre Linéaire 2</td><td>16,00</td></tr>
-              <tr><td>INF1222</td><td data-fr="Architecture &amp; SE" data-en="Architecture &amp; OS">Architecture &amp; SE</td><td>14,28</td></tr>
-            </tbody>
-          </table>
+          <span class="sem-label">Semestre 1 · 15,01</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>INF1122</td><td>Algorithme 1</td><td>17,50</td></tr><tr class="top-note"><td>PRO1123</td><td>Analyse combinatoire</td><td>16,60</td></tr><tr><td>PHY1124</td><td>Électricité & Mécanique</td><td>14,50</td></tr></tbody></table>
+          <span class="sem-label">Semestre 2 · 14,40</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>STA1223</td><td>Statistique Univariée</td><td>16,30</td></tr><tr class="top-note"><td>ALG1220</td><td>Algèbre Linéaire 2</td><td>16,00</td></tr><tr><td>INF1222</td><td>Architecture & SE</td><td>14,28</td></tr></tbody></table>
         </div>
-        <div class="bulletin-footer">
-          <div class="bulletin-credits"><strong>60 <span data-fr="crédits" data-en="credits">crédits</span></strong> · <span data-fr="Admis en L2" data-en="Passed to Y2">Admis en L2</span></div>
-          <a href="releves3.pdf" class="btn-bulletin" target="_blank" data-fr="Voir relevés ↗" data-en="View transcripts ↗">Voir relevés ↗</a>
-        </div>
+        <div class="bulletin-footer"><div class="bulletin-credits"><strong>60 crédits</strong> · Admis en L2</div><a href="releves3.pdf" class="btn-bulletin" target="_blank">Voir relevés ↗</a></div>
       </div>
-
       <!-- LICENCE 2 -->
       <div class="bulletin-card">
-        <div class="bulletin-header">
-          <div>
-            <div class="bulletin-school">USSEIN – UFR Sciences &amp; Ingénieur</div>
-            <div class="bulletin-degree" data-fr="Licence 2 – Maths, Physique, Informatique" data-en="Bachelor 2 – Maths, Physics, CS">Licence 2 – Maths, Physique, Informatique</div>
-            <div class="bulletin-year">2020–2021</div>
-          </div>
-          <div class="bulletin-mention">
-            <span class="mention-badge mention-bien" data-fr="Bien" data-en="Honours">Bien</span>
-            <div class="mention-avg">14,78</div>
-          </div>
-        </div>
+        <div class="bulletin-header"><div><div class="bulletin-school">USSEIN, UFR Sciences & Ingénieur</div><div class="bulletin-degree">Licence 2, Maths, Physique, Informatique</div><div class="bulletin-year">2020–2021</div></div><div class="bulletin-mention"><span class="mention-badge mention-bien">Bien</span><div class="mention-avg">14,78</div></div></div>
         <div class="bulletin-body">
-          <span class="sem-label" data-fr="Semestre 3 · 16,09" data-en="Semester 3 · 16.09">Semestre 3 · 16,09</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>MEC2323</td><td data-fr="Cinématique des Solides" data-en="Solid Kinematics">Cinématique des Solides</td><td>19,50</td></tr>
-              <tr class="top-note"><td>INF2322</td><td data-fr="Informatique 3" data-en="Computer Science 3">Informatique 3</td><td>18,40</td></tr>
-              <tr class="top-note"><td>ALG2320</td><td data-fr="Algèbre 3" data-en="Algebra 3">Algèbre 3</td><td>18,00</td></tr>
-            </tbody>
-          </table>
-          <span class="sem-label" data-fr="Semestre 4 · 13,47" data-en="Semester 4 · 13.47">Semestre 4 · 13,47</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>ALG2420</td><td data-fr="Algèbre 4 (Bilinéaire)" data-en="Algebra 4 (Bilinear)">Algèbre 4 (Bilinéaire)</td><td>17,00</td></tr>
-              <tr class="top-note"><td>ANA2421</td><td data-fr="Analyse 4" data-en="Analysis 4">Analyse 4</td><td>16,00</td></tr>
-              <tr><td>NUM2426</td><td data-fr="Analyse numérique" data-en="Numerical Analysis">Analyse numérique</td><td>13,50</td></tr>
-            </tbody>
-          </table>
+          <span class="sem-label">Semestre 3 · 16,09</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>MEC2323</td><td>Cinématique des Solides</td><td>19,50</td></tr><tr class="top-note"><td>INF2322</td><td>Informatique 3</td><td>18,40</td></tr><tr class="top-note"><td>ALG2320</td><td>Algèbre 3</td><td>18,00</td></tr></tbody></table>
+          <span class="sem-label">Semestre 4 · 13,47</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>ALG2420</td><td>Algèbre 4 (Bilinéaire)</td><td>17,00</td></tr><tr class="top-note"><td>ANA2421</td><td>Analyse 4</td><td>16,00</td></tr><tr><td>NUM2426</td><td>Analyse numérique</td><td>13,50</td></tr></tbody></table>
         </div>
-        <div class="bulletin-footer">
-          <div class="bulletin-credits"><strong>60 <span data-fr="crédits" data-en="credits">crédits</span></strong> · <span data-fr="Admis en L3" data-en="Passed to Y3">Admis en L3</span></div>
-          <a href="releves3.pdf" class="btn-bulletin" target="_blank" data-fr="Voir relevés ↗" data-en="View transcripts ↗">Voir relevés ↗</a>
-        </div>
+        <div class="bulletin-footer"><div class="bulletin-credits"><strong>60 crédits</strong> · Admis en L3</div><a href="releves3.pdf" class="btn-bulletin" target="_blank">Voir relevés ↗</a></div>
       </div>
-
       <!-- LICENCE 3 -->
       <div class="bulletin-card">
-        <div class="bulletin-header">
-          <div>
-            <div class="bulletin-school">USSEIN – UFR Sciences &amp; Ingénieur</div>
-            <div class="bulletin-degree" data-fr="Licence 3 – Spécialité Mathématiques" data-en="Bachelor 3 – Mathematics">Licence 3 – Spécialité Mathématiques</div>
-            <div class="bulletin-year">2021–2022</div>
-          </div>
-          <div class="bulletin-mention">
-            <span class="mention-badge mention-bien" data-fr="Bien · Major" data-en="Honours · Top">Bien · Major</span>
-            <div class="mention-avg">15,12</div>
-          </div>
-        </div>
+        <div class="bulletin-header"><div><div class="bulletin-school">USSEIN, UFR Sciences & Ingénieur</div><div class="bulletin-degree">Licence 3, Spécialité Mathématiques</div><div class="bulletin-year">2021–2022</div></div><div class="bulletin-mention"><span class="mention-badge mention-bien">Bien · Major</span><div class="mention-avg">15,12</div></div></div>
         <div class="bulletin-body">
-          <span class="sem-label" data-fr="Semestre 5 · 15,21" data-en="Semester 5 · 15.21">Semestre 5 · 15,21</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>INF3505</td><td data-fr="Scilab, Python avancé" data-en="Scilab, Advanced Python">Scilab, Python avancé</td><td>17,85</td></tr>
-              <tr class="top-note"><td>PRO3503</td><td data-fr="Mesure et Intégration" data-en="Measure &amp; Integration">Mesure et Intégration</td><td>17,00</td></tr>
-              <tr class="top-note"><td>ALG3501</td><td data-fr="Théories des Groupes" data-en="Group Theory">Théories des Groupes</td><td>16,20</td></tr>
-            </tbody>
-          </table>
-          <span class="sem-label" data-fr="Semestre 6 · 15,04" data-en="Semester 6 · 15.04">Semestre 6 · 15,04</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>PRO3604</td><td data-fr="Théorie des Probabilités" data-en="Probability Theory">Théorie des Probabilités</td><td>17,00</td></tr>
-              <tr class="top-note"><td>ANA3602</td><td data-fr="Calcul Différentiel" data-en="Differential Calculus">Calcul Différentiel</td><td>15,75</td></tr>
-              <tr class="top-note"><td>CS3605</td><td data-fr="Calcul Scientifique" data-en="Scientific Computing">Calcul Scientifique</td><td>15,75</td></tr>
-            </tbody>
-          </table>
+          <span class="sem-label">Semestre 5 · 15,21</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>INF3505</td><td>Scilab, Python avancé</td><td>17,85</td></tr><tr class="top-note"><td>PRO3503</td><td>Mesure et Intégration</td><td>17,00</td></tr><tr class="top-note"><td>ALG3501</td><td>Théories des Groupes</td><td>16,20</td></tr></tbody></table>
+          <span class="sem-label">Semestre 6 · 15,04</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>PRO3604</td><td>Théorie des Probabilités</td><td>17,00</td></tr><tr class="top-note"><td>ANA3602</td><td>Calcul Différentiel</td><td>15,75</td></tr><tr class="top-note"><td>CS3605</td><td>Calcul Scientifique</td><td>15,75</td></tr></tbody></table>
         </div>
-        <div class="bulletin-footer">
-          <div class="bulletin-credits"><strong>60 <span data-fr="crédits" data-en="credits">crédits</span></strong> · <span data-fr="Licence validée" data-en="Bachelor's validated">Licence validée</span></div>
-          <a href="releves3.pdf" class="btn-bulletin" target="_blank" data-fr="Voir relevés ↗" data-en="View transcripts ↗">Voir relevés ↗</a>
-        </div>
+        <div class="bulletin-footer"><div class="bulletin-credits"><strong>60 crédits</strong> · Licence validée</div><a href="releves3.pdf" class="btn-bulletin" target="_blank">Voir relevés ↗</a></div>
       </div>
-
       <!-- MASTER 1 -->
       <div class="bulletin-card">
-        <div class="bulletin-header">
-          <div>
-            <div class="bulletin-school">UIDT Thiès – Département Informatique</div>
-            <div class="bulletin-degree" data-fr="Master 1 – IA &amp; Smart-Tech" data-en="Master 1 – AI &amp; Smart-Tech">Master 1 – IA &amp; Smart-Tech</div>
-            <div class="bulletin-year">2022–2023</div>
-          </div>
-          <div class="bulletin-mention">
-            <span class="mention-badge mention-assez" data-fr="Assez Bien" data-en="Good">Assez Bien</span>
-            <div class="mention-avg">12,53</div>
-          </div>
-        </div>
+        <div class="bulletin-header"><div><div class="bulletin-school">UIDT Thiès, Département Informatique</div><div class="bulletin-degree">Master 1, IA & Smart-Tech</div><div class="bulletin-year">2022–2023</div></div><div class="bulletin-mention"><span class="mention-badge mention-assez">Assez Bien</span><div class="mention-avg">12,53</div></div></div>
         <div class="bulletin-body">
-          <span class="sem-label" data-fr="Semestre 1 · 12,52" data-en="Semester 1 · 12.52">Semestre 1 · 12,52</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>INF414</td><td data-fr="Service Web &amp; Intro IA" data-en="Web Services &amp; Intro AI">Service Web &amp; Intro IA</td><td>14,40</td></tr>
-              <tr class="top-note"><td>INF415</td><td data-fr="Anglais &amp; Communication" data-en="English &amp; Communication">Anglais &amp; Communication</td><td>12,97</td></tr>
-              <tr class="top-note"><td>INF411</td><td data-fr="Probabilités &amp; Graphes" data-en="Probability &amp; Graphs">Probabilités &amp; Graphes</td><td>12,25</td></tr>
-            </tbody>
-          </table>
-          <span class="sem-label" data-fr="Semestre 2 · 12,55" data-en="Semester 2 · 12.55">Semestre 2 · 12,55</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>INF2223</td><td data-fr="Projet d'Application" data-en="Application Project">Projet d'Application</td><td>14,00</td></tr>
-              <tr class="top-note"><td>INF2221</td><td data-fr="Python Data Science" data-en="Python Data Science">Python Data Science</td><td>11,80</td></tr>
-              <tr class="top-note"><td>INF2222</td><td data-fr="Deep Learning (CNN)" data-en="Deep Learning (CNN)">Deep Learning (CNN)</td><td>11,75</td></tr>
-            </tbody>
-          </table>
+          <span class="sem-label">Semestre 1 · 12,52</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>INF414</td><td>Service Web & Intro IA</td><td>14,40</td></tr><tr class="top-note"><td>INF415</td><td>Anglais & Communication</td><td>12,97</td></tr><tr class="top-note"><td>INF411</td><td>Probabilités & Graphes</td><td>12,25</td></tr></tbody></table>
+          <span class="sem-label">Semestre 2 · 12,55</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>INF2223</td><td>Projet d'Application</td><td>14,00</td></tr><tr class="top-note"><td>INF2221</td><td>Python Data Science</td><td>11,80</td></tr><tr class="top-note"><td>INF2222</td><td>Deep Learning (CNN)</td><td>11,75</td></tr></tbody></table>
         </div>
-        <div class="bulletin-footer">
-          <div class="bulletin-credits"><strong>65 <span data-fr="crédits" data-en="credits">crédits</span></strong> · <span data-fr="Admis en M2" data-en="Passed to M2">Admis en M2</span></div>
-          <a href="releves3.pdf" class="btn-bulletin" target="_blank" data-fr="Voir relevés ↗" data-en="View transcripts ↗">Voir relevés ↗</a>
-        </div>
+        <div class="bulletin-footer"><div class="bulletin-credits"><strong>65 crédits</strong> · Admis en M2</div><a href="releves3.pdf" class="btn-bulletin" target="_blank">Voir relevés ↗</a></div>
       </div>
-
       <!-- MASTER 2 -->
       <div class="bulletin-card featured">
-        <div class="bulletin-header">
-          <div>
-            <div class="bulletin-school">UIDT Thiès – Département Informatique</div>
-            <div class="bulletin-degree" data-fr="Master 2 – IA &amp; Smart-Tech" data-en="Master 2 – AI &amp; Smart-Tech">Master 2 – IA &amp; Smart-Tech</div>
-            <div class="bulletin-year">2023–2024</div>
-          </div>
-          <div class="bulletin-mention">
-            <span class="mention-badge mention-bien" data-fr="Bien" data-en="Honours">Bien</span>
-            <div class="mention-avg">14,86</div>
-          </div>
-        </div>
+        <div class="bulletin-header"><div><div class="bulletin-school">UIDT Thiès, Département Informatique</div><div class="bulletin-degree">Master 2, IA & Smart-Tech</div><div class="bulletin-year">2023–2024</div></div><div class="bulletin-mention"><span class="mention-badge mention-bien">Bien</span><div class="mention-avg">14,86</div></div></div>
         <div class="bulletin-body">
-          <span class="sem-label" data-fr="Semestre 3 · 14,71" data-en="Semester 3 · 14.71">Semestre 3 · 14,71</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>INF2335</td><td data-fr="Santé, Énergie, Smart Objects" data-en="Health, Energy, Smart Objects">Santé, Énergie, Smart Objects</td><td>17,50</td></tr>
-              <tr class="top-note"><td>INF2332</td><td data-fr="Collecte &amp; chaîne de valorisation" data-en="Data Collection &amp; Value Chain">Collecte &amp; chaîne de valorisation</td><td>14,45</td></tr>
-              <tr class="top-note"><td>INF2336</td><td data-fr="Projet d'Application" data-en="Application Project">Projet d'Application</td><td>14,75</td></tr>
-            </tbody>
-          </table>
-          <span class="sem-label" data-fr="Semestre 4 · 15,00" data-en="Semester 4 · 15.00">Semestre 4 · 15,00</span>
-          <table class="bulletin-table">
-            <thead><tr><th>UE</th><th data-fr="Intitulé" data-en="Course">Intitulé</th><th data-fr="Moy." data-en="Avg.">Moy.</th></tr></thead>
-            <tbody>
-              <tr class="top-note"><td>STG2400</td><td data-fr="Stage et Mémoire" data-en="Internship &amp; Dissertation">Stage et Mémoire</td><td>15,00</td></tr>
-            </tbody>
-          </table>
+          <span class="sem-label">Semestre 3 · 14,71</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>INF2335</td><td>Santé, Énergie, Smart Objects</td><td>17,50</td></tr><tr class="top-note"><td>INF2332</td><td>Collecte & chaîne de valorisation</td><td>14,45</td></tr><tr class="top-note"><td>INF2336</td><td>Projet d'Application</td><td>14,75</td></tr></tbody></table>
+          <span class="sem-label">Semestre 4 · 15,00</span>
+          <table class="bulletin-table"><thead><tr><th>UE</th><th>Intitulé</th><th>Moy.</th></tr></thead><tbody><tr class="top-note"><td>STG2400</td><td>Stage et Mémoire</td><td>15,00</td></tr></tbody></table>
         </div>
-        <div class="bulletin-footer" style="background:#e8f0ff;">
-          <div class="bulletin-credits"><strong>70 <span data-fr="crédits" data-en="credits">crédits</span></strong> · <strong><span data-fr="Master validé" data-en="Master's validated">Master validé</span></strong></div>
-          <a href="releves3.pdf" class="btn-bulletin" target="_blank" data-fr="Voir relevés ↗" data-en="View transcripts ↗">Voir relevés ↗</a>
-        </div>
+        <div class="bulletin-footer" style="background:#e8f0ff;"><div class="bulletin-credits"><strong>70 crédits</strong> · <strong>Master validé</strong></div><a href="releves3.pdf" class="btn-bulletin" target="_blank">Voir relevés ↗</a></div>
       </div>
-
     </div>
-
     <div class="bulletin-pdf-cta">
-      <a href="releves3.pdf" target="_blank" class="btn btn-primary" style="font-size:0.95rem;padding:0.75rem 2rem;">
-        <span data-fr="📄 Voir tous les relevés officiels (PDF)" data-en="📄 View all official transcripts (PDF)">📄 Voir tous les relevés officiels (PDF)</span>
-      </a>
+      <a href="releves3.pdf" target="_blank" class="btn btn-primary" style="font-size:0.95rem;padding:0.75rem 2rem;"><span>📄 Voir tous les relevés officiels (PDF)</span></a>
     </div>
   </div>
 </section>
@@ -805,59 +382,20 @@
       <div class="skills-col">
         <h3 class="skills-subtitle" data-fr="Technologies maîtrisées" data-en="Mastered Technologies">Technologies maîtrisées</h3>
         <div class="hard-skills">
-          <div class="skill-cat">
-            <div class="cat-name" data-fr="Langages" data-en="Languages">Langages</div>
-            <div class="cat-items">Python, SQL, C, Scilab</div>
-          </div>
-          <div class="skill-cat">
-            <div class="cat-name">Machine Learning / Deep Learning</div>
-            <div class="cat-items">TensorFlow, PyTorch, Scikit-learn, Vision Transformers, CNNs</div>
-          </div>
-          <div class="skill-cat">
-            <div class="cat-name" data-fr="Data Engineering &amp; Visualisation" data-en="Data Engineering &amp; Visualisation">Data Engineering &amp; Visualisation</div>
-            <div class="cat-items">Pandas, NumPy, Power BI, Streamlit, Geopandas, PySpark</div>
-          </div>
-          <div class="skill-cat">
-            <div class="cat-name" data-fr="Outils &amp; Environnement" data-en="Tools &amp; Environment">Outils &amp; Environnement</div>
-            <div class="cat-items">Git, Linux, Jupyter, Blender, IoT (capteurs, protocoles)</div>
-          </div>
-          <div class="skill-cat">
-            <div class="cat-name" data-fr="Cloud &amp; Déploiement (en développement)" data-en="Cloud &amp; Deployment (in progress)">Cloud &amp; Déploiement (en développement)</div>
-            <div class="cat-items">Docker, AWS (notions), CI/CD</div>
-          </div>
+          <div class="skill-cat"><div class="cat-name" data-fr="Langages" data-en="Languages">Langages</div><div class="cat-items">Python, SQL, C, Scilab</div></div>
+          <div class="skill-cat"><div class="cat-name">Machine Learning / Deep Learning</div><div class="cat-items">TensorFlow, PyTorch, Scikit-learn, Vision Transformers, CNNs</div></div>
+          <div class="skill-cat"><div class="cat-name" data-fr="Data Engineering &amp; Visualisation" data-en="Data Engineering &amp; Visualisation">Data Engineering &amp; Visualisation</div><div class="cat-items">Pandas, NumPy, Power BI, Streamlit, Geopandas, PySpark</div></div>
+          <div class="skill-cat"><div class="cat-name" data-fr="Outils &amp; Environnement" data-en="Tools &amp; Environment">Outils &amp; Environnement</div><div class="cat-items">Git, Linux, Jupyter, Blender, IoT (capteurs, protocoles)</div></div>
+          <div class="skill-cat"><div class="cat-name" data-fr="Cloud &amp; Déploiement (en développement)" data-en="Cloud &amp; Deployment (in progress)">Cloud &amp; Déploiement (en développement)</div><div class="cat-items">Docker, AWS (notions), CI/CD</div></div>
         </div>
       </div>
       <div class="skills-col">
         <h3 class="skills-subtitle">Soft Skills</h3>
         <div class="soft-skills">
-          <div class="soft-item">
-            <div class="soft-icon">👥</div>
-            <div>
-              <strong data-fr="Travail en équipe &amp; coordination technique" data-en="Teamwork &amp; technical coordination">Travail en équipe &amp; coordination technique</strong>
-              <p data-fr="Pilotage d'équipes lors de hackathons (ANSD, DHIS2Harvest). Collaboration avec la DRDR Tambacounda." data-en="Team leadership at hackathons (ANSD, DHIS2Harvest). Collaboration with DRDR Tambacounda.">Pilotage d'équipes lors de hackathons (ANSD, DHIS2Harvest). Collaboration avec la DRDR Tambacounda.</p>
-            </div>
-          </div>
-          <div class="soft-item">
-            <div class="soft-icon">🗣️</div>
-            <div>
-              <strong data-fr="Communication &amp; vulgarisation" data-en="Communication &amp; knowledge sharing">Communication &amp; vulgarisation</strong>
-              <p data-fr="Présentations devant des jurys internationaux (AUF, IEEE). Enseignement et partage de connaissances en milieu académique." data-en="Presentations before international juries (AUF, IEEE). Teaching and knowledge sharing in academic settings.">Présentations devant des jurys internationaux (AUF, IEEE). Enseignement et partage de connaissances en milieu académique.</p>
-            </div>
-          </div>
-          <div class="soft-item">
-            <div class="soft-icon">🌍</div>
-            <div>
-              <strong data-fr="Sens du contexte africain" data-en="Understanding of African context">Sens du contexte africain</strong>
-              <p data-fr="Capacité à adapter les solutions IA aux contraintes locales (infrastructures, données, usages)." data-en="Ability to adapt AI solutions to local constraints (infrastructure, data, usage).">Capacité à adapter les solutions IA aux contraintes locales (infrastructures, données, usages).</p>
-            </div>
-          </div>
-          <div class="soft-item">
-            <div class="soft-icon">🧠</div>
-            <div>
-              <strong data-fr="Rigueur &amp; curiosité scientifique" data-en="Rigour &amp; scientific curiosity">Rigueur &amp; curiosité scientifique</strong>
-              <p data-fr="Publication en cours, approche expérimentale solide, veille technologique permanente." data-en="Ongoing publication, solid experimental approach, continuous technology monitoring.">Publication en cours, approche expérimentale solide, veille technologique permanente.</p>
-            </div>
-          </div>
+          <div class="soft-item"><div class="soft-icon">👥</div><div><strong data-fr="Travail en équipe &amp; coordination technique" data-en="Teamwork &amp; technical coordination">Travail en équipe &amp; coordination technique</strong><p data-fr="Pilotage d'équipes lors de hackathons (ANSD, DHIS2Harvest). Collaboration avec la DRDR Tambacounda." data-en="Team leadership at hackathons (ANSD, DHIS2Harvest). Collaboration with DRDR Tambacounda.">Pilotage d'équipes lors de hackathons (ANSD, DHIS2Harvest). Collaboration avec la DRDR Tambacounda.</p></div></div>
+          <div class="soft-item"><div class="soft-icon">🗣️</div><div><strong data-fr="Communication &amp; vulgarisation" data-en="Communication &amp; knowledge sharing">Communication &amp; vulgarisation</strong><p data-fr="Présentations devant des jurys internationaux (AUF, IEEE). Enseignement et partage de connaissances en milieu académique." data-en="Presentations before international juries (AUF, IEEE). Teaching and knowledge sharing in academic settings.">Présentations devant des jurys internationaux (AUF, IEEE). Enseignement et partage de connaissances en milieu académique.</p></div></div>
+          <div class="soft-item"><div class="soft-icon">🔍</div><div><strong data-fr="Analyse critique des données" data-en="Critical data analysis">Analyse critique des données</strong><p data-fr="Attention constante à la représentativité et aux biais potentiels. Capacité à justifier les choix méthodologiques et à remettre en question les résultats." data-en="Constant awareness of data representativeness and potential biases. Ability to justify methodological choices and question results.">Attention constante à la représentativité et aux biais potentiels. Capacité à justifier les choix méthodologiques et à remettre en question les résultats.</p></div></div>
+          <div class="soft-item"><div class="soft-icon">🧠</div><div><strong data-fr="Rigueur &amp; curiosité scientifique" data-en="Rigour &amp; scientific curiosity">Rigueur &amp; curiosité scientifique</strong><p data-fr="Publication en cours, approche expérimentale solide, veille technologique permanente." data-en="Ongoing publication, solid experimental approach, continuous technology monitoring.">Publication en cours, approche expérimentale solide, veille technologique permanente.</p></div></div>
         </div>
       </div>
     </div>
@@ -871,17 +409,14 @@
     <div>
       <div class="c-lbl">Contact</div>
       <h2 class="c-ttl" data-fr="Collaborons sur un <em>projet commun</em>" data-en="Let's collaborate on a <em>shared project</em>">Collaborons sur un <em>projet commun</em></h2>
-      <p class="c-desc" data-fr="Je suis ouvert aux opportunités de doctorat, aux collaborations de recherche et aux projets IA à impact en Afrique. N'hésitez pas à me contacter pour échanger." data-en="I am open to PhD opportunities, research collaborations and high-impact AI projects in Africa. Feel free to reach out.">
-        Je suis ouvert aux opportunités de doctorat, aux collaborations de recherche et aux projets IA à impact en Afrique.
-        N'hésitez pas à me contacter pour échanger.
-      </p>
+      <p class="c-desc" data-fr="Je suis ouvert aux opportunités de doctorat, aux collaborations de recherche et aux projets IA à impact en Afrique. N'hésitez pas à me contacter pour échanger." data-en="I am open to PhD opportunities, research collaborations and high-impact AI projects in Africa. Feel free to reach out.">Je suis ouvert aux opportunités de doctorat, aux collaborations de recherche et aux projets IA à impact en Afrique. N'hésitez pas à me contacter pour échanger.</p>
       <a href="mailto:mamadou6kh0@gmail.com" class="btn btn-primary" data-fr="Envoyer un message →" data-en="Send a message →">Envoyer un message →</a>
     </div>
     <div class="clinksg">
-      <a href="mailto:mamadou6kh0@gmail.com" class="clink"><div class="clink-ico">✉️</div><div><div class="clink-lbl">Email</div><div class="clink-val">mamadou6kh0@gmail.com</div></div></a>
-      <a href="https://github.com/6ko481" target="_blank" class="clink"><div class="clink-ico">⌨️</div><div><div class="clink-lbl">GitHub</div><div class="clink-val">6ko481</div></div></a>
-      <a href="https://www.linkedin.com/in/mamadou-cissokho-228186339/" target="_blank" class="clink"><div class="clink-ico">💼</div><div><div class="clink-lbl">LinkedIn</div><div class="clink-val">mamadou-cissokho</div></div></a>
-      <a href="https://kaggle.com/cisko6koman" target="_blank" class="clink"><div class="clink-ico">📊</div><div><div class="clink-lbl">Kaggle</div><div class="clink-val">cisko6koman</div></div></a>
+      <a href="mailto:mamadou6kh0@gmail.com" class="clink"><div class="clink-ico">✉</div><div><div class="clink-lbl">Email</div><div class="clink-val">mamadou6kh0@gmail.com</div></div></a>
+      <a href="https://github.com/6ko481" target="_blank" class="clink"><div class="clink-ico">⌨</div><div><div class="clink-lbl">GitHub</div><div class="clink-val">6ko481</div></div></a>
+      <a href="https://www.linkedin.com/in/mamadou-cissokho-228186339/" target="_blank" class="clink"><div class="clink-ico">⌗</div><div><div class="clink-lbl">LinkedIn</div><div class="clink-val">Mamadou Cissokho</div></div></a>
+      <a href="https://kaggle.com/cisko6koman" target="_blank" class="clink"><div class="clink-ico">◈</div><div><div class="clink-lbl">Kaggle</div><div class="clink-val">cisko6koman</div></div></a>
     </div>
   </div>
 </section>
@@ -929,23 +464,16 @@ let currentLang = 'fr';
 function setLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
-
-  // Buttons active state
   document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
-  // Update all translatable elements
   document.querySelectorAll('[data-fr][data-en]').forEach(el => {
     const text = el.getAttribute('data-' + lang);
     if (!text) return;
-    // Use innerHTML to support tags like <em>, <strong>
     el.innerHTML = text;
   });
-
-  // Update page title
   document.title = lang === 'fr'
-    ? 'Mamadou Cissokho – Data Scientist, Santé • Agriculture • Climat'
-    : 'Mamadou Cissokho – Data Scientist, Health • Agriculture • Climate';
+    ? 'Mamadou Cissokho, Data Scientist, Santé • Agriculture • Climat'
+    : 'Mamadou Cissokho, Data Scientist, Health • Agriculture • Climate';
 }
 </script>
 </body>
